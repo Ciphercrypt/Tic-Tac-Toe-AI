@@ -153,7 +153,7 @@ $(document).ready(function(){
             $('.screen').fadeIn();
             $('.console').fadeIn();
           },500);
-          $('#cmd').append('<p class="line2">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Tac Toe AI  active....,<span class="cursor1">_</span></p> <p class="line1">AI<img src="ai_image.png" style="width:10%;height:10%;" />>_Waiting for <img src="head.png" style="width:10%;height:10%;" />Human input..<span class="cursor2">_</span></p> ');
+          $('#cmd').append('<p class="line2">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Tac Toe AI  active....,<span class="cursor1">_</span></p> <p class="line1">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Waiting for <img src="sources/head.png" style="width:10%;height:10%;" />Human input..<span class="cursor2">_</span></p> ');
 
           return;
 
@@ -164,7 +164,7 @@ $(document).ready(function(){
             $('.screen').fadeIn();
             $('.console').fadeIn();
           },500);
-          $('#cmd').append('<p class="line2">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Tac Toe AI  active....,<span class="cursor1">_</span></p> <p class="line1">AI<img src="ai_image.png" style="width:10%;height:10%;" />>_Waiting for <img src="head.png" style="width:10%;height:10%;" />Human input..<span class="cursor2">_</span></p> ');
+          $('#cmd').append('<p class="line2">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Tac Toe AI  active....,<span class="cursor1">_</span></p> <p class="line1">AI<img src="sources/ai_image.png" style="width:10%;height:10%;" />>_Waiting for <img src="sources/head.png" style="width:10%;height:10%;" />Human input..<span class="cursor2">_</span></p> ');
           return;
         } else {
           human = !human;
