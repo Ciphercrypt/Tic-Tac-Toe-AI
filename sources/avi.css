@@ -1,0 +1,460 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico|Lato);
+
+html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: middle;
+   
+   -webkit-user-select: none;         
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+
+  -o-user-select: none;
+  user-select: none;
+ }
+
+body{
+  font-family : lato,sans;
+}
+
+
+div.head h1{
+  color:#444;
+  font-size : 4em;
+  margin : 10px auto;
+  text-align : center;
+}
+
+.curs{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.wrap{
+  position:relative;
+  margin:auto;
+  margin-top: 20px;
+  width : 400px;
+  
+}
+
+.row{
+  text-align:center;
+  margin : 10px auto;
+}
+
+div.pop-up h3{
+  text-align:center;
+  padding-top: 5px;
+  color: #444;
+}
+
+.inline{
+  display:inline-block;
+  margin:10px 5px;
+  text-align:center;  
+}
+
+.big{
+  font-size:2em;
+  margin : 30px auto;
+}
+
+#sub{
+  color: #888;
+}
+
+.el,.el-s,.el-o{
+  display: inline-block;
+  height:110px;
+  width:110px;
+  font-size : 4.5em;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius:20px;
+  margin: auto 5px;
+  color: #f8f8f8;
+}
+.el i,.el-s i,.el-o i{
+  padding-bottom: 8px;
+}
+.el-o{
+  margin-right: 20px;
+}
+.screen{
+  display:none;
+  background-color:rgba(138, 133, 133, 0.6);
+  position:fixed;
+  width: 100%;
+  height : 65%;
+  top : 0;
+}
+
+.pop-up{
+  position:absolute;
+  width : 400px;
+  height : 175px;
+  border-radius: 20px;
+  background-color:#fff;
+  margin: 0 auto;
+  top  : 250px;
+  left : 50%;
+  margin-left: -200px;
+  box-shadow: 0px 5px 5px -2px rgba(20,20,20, 0.4);
+  display:none;
+}
+
+.win{
+  background-color: #E6382B;
+}
+
+.tie{
+  background-color: #a5bcae;
+}
+
+.free{
+  cursor : pointer;
+  background: #FC5C7D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+.free:hover{
+    background: #1a2a6c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       }
+
+.free1{
+    cursor : pointer;
+    background: #11998e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  .free1:hover{
+    background: #30E8BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FF8235, #30E8BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FF8235, #30E8BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+  
+
+
+.fakeButtons {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    position: relative;
+    top: 6px;
+    left: 6px;
+    background-color: #ff3b47;
+    border-color: #9d252b;
+    display: inline-block;
+  }
+  
+  .fakeMinimize {
+    left: 11px;
+    background-color: #ffc100;
+    border-color: #9d802c;
+  }
+  
+  .fakeZoom {
+    left: 16px;
+    background-color: #00d742;
+    border-color: #049931;
+  }
+  
+  .fakeMenu {
+    margin-top: 40px;
+    width: 450px;
+    box-sizing: border-box;
+    height: 25px;
+    background-color: #bbb;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  
+  .fakeScreen {
+      overflow: auto;
+    background-color: #151515;
+    box-sizing: border-box;
+    width: 450px;
+    height: 230px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  p {
+    position: relative;
+    left: 40%;
+    margin-left: -8.5em;
+    text-align: left;
+    font-size: 1.25em;
+    font-family: monospace;
+    white-space: nowrap;
+    width: 0;
+  }
+  
+  span {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .line1 {
+    color: #9CD9F0;
+    -webkit-animation: type .9s 1s steps(20, end) forwards;
+    -moz-animation: type .9s 1s steps(20, end) forwards;
+    -o-animation: type .9s 1s steps(20, end) forwards;
+    animation: type .9s 1s steps(20, end) forwards;
+  }
+  
+  .cursor1 {
+    -webkit-animation: blink 1s 2s 2 forwards;
+    -moz-animation: blink 1s 2s 2 forwards;
+    -o-animation: blink 1s 2s 2 forwards;
+    animation: blink 1s 2s 2 forwards;
+  }
+  
+  .line2 {
+    color: #CDEE69;
+    -webkit-animation: type .5s 1s steps(20, end) forwards;
+    -moz-animation: type .5s 1s steps(20, end) forwards;
+    -o-animation: type .5s 1s steps(20, end) forwards;
+    animation: type .5s 1s steps(20, end) forwards;
+  }
+  
+  .cursor2 {
+    -webkit-animation: blink 1s 2s 2 forwards;
+    -moz-animation: blink 1s 2s 2 forwards;
+    -o-animation: blink 1s 2s 2 forwards;
+    animation: blink 1s 2s 2 forwards;
+  }
+  
+  .line3 {
+    color: #E09690;
+    -webkit-animation: type .5s 1s steps(20, end) forwards;
+    -moz-animation: type .5s 1s steps(20, end) forwards;
+    -o-animation: type .5s 1s steps(20, end) forwards;
+    animation: type .5s 1s steps(20, end) forwards;
+  }
+  
+  .cursor3 {
+    -webkit-animation: blink 1s 2s 2 forwards;
+    -moz-animation: blink 1s 2s 2 forwards;
+    -o-animation: blink 1s 2s 2 forwards;
+    animation: blink 1s 2s 2 forwards;
+  }
+  
+  .line4 {
+    color: rgb(19, 199, 43);
+    -webkit-animation: type .9s 1s steps(20, end) forwards;
+    -moz-animation: type .9s 1s steps(20, end) forwards;
+    -o-animation: type .9s 1s steps(20, end) forwards;
+    animation: type .9s 1s steps(20, end) forwards;
+  }
+  
+  .cursor4 {
+    -webkit-animation: blink 1s 11.5s infinite;
+    -moz-animation: blink 1s 8.5s infinite;
+    -o-animation: blink 1s 8.5s infinite;
+    animation: blink 1s 8.5s infinite;
+  }
+  
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @-moz-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @-o-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    to {
+      width: 17em;
+    }
+  }
+  
+  @-moz-keyframes type {
+    to {
+      width: 17em;
+    }
+  }
+  
+  @-o-keyframes type {
+    to {
+      width: 17em;
+    }
+  }
+  
+  @keyframes type {
+    to {
+      width: 17em;
+    }
+  }
+
+
+/* Scaling for Mobile */
+@media screen and (max-width: 900px){
+
+  .head {
+      margin-top: -10px;
+      font-size: 10px;
+    display:flex;
+  }
+  .wrap {
+    top: -20px;
+    
+    -moz-transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+    
+    left: 50%;
+    margin-left: -140px;
+  }
+  .fakeMenu {
+      overflow: auto;
+    width: 350px;
+    box-sizing: border-box;
+    height: 25px;
+    display: flex;
+    background-color: #bbb;
+    margin-top:-100px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  
+  .fakeScreen {
+
+      overflow: auto;
+    background-color: #151515;
+    box-sizing: border-box;
+    width: 350px;
+    height: 270px;
+    padding: 10px;
+    display: flex;
+
+    flex-direction: column-reverse;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+
+  .screen{
+    display:none;
+    background-color:rgba(10,10,10,0.6);
+    position:fixed;
+    width: 100%;
+    height : 50%;
+    top : 0;
+  }
+  .pop-up {
+    
+    top: 150px;
+    -moz-transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+    
+    left: 50%;
+    margin-left: -140px;
+  }
+}
+
+.txt {
+  position: relative;
+  top: 5px;
+}
+
+
